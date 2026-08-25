@@ -1,0 +1,49 @@
+replicaCount: 1
+
+image:
+  repository: 484954965111.dkr.ecr.ap-south-1.amazonaws.com/sameer-eks-app
+  pullPolicy: Always
+  tag: "v2"
+
+imagePullSecrets: []
+
+service:
+  type: LoadBalancer
+  port: 5000
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+livenessProbe:
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 20
+  periodSeconds: 10
+
+readinessProbe:
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 10
+  periodSeconds: 5
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+ingress:
+  enabled: false

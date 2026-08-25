@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sameer DevOps Project</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial;
+            background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            color: white;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            background: #00ff88;
+            border-radius: 50%;
+            display: inline-block;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.2; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🚀 sameer DevOps Project</h1>
+
+    <p>Kubernetes + Docker + EKS Running Successfully</p>
+
+    <p>Status:
+        <span class="dot"></span>
+    </p>
+
+    <p>Powered by Flask + AWS EKS</p>
+</div>
+
+</body>
+</html>
