@@ -1,2 +1,2 @@
-# aws_ekd_project
+# aws_eks_project
 self learn
